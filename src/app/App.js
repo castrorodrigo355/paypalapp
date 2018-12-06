@@ -7,11 +7,37 @@ import './App.css';
 // https://github.com/SonarSystems/Bootstrap-4-Tutorial-Series
 
 class App extends Component {
+
+    buy(e){
+        fetch(`/pay`, {
+            method: 'POST',
+            body: JSON.stringify({
+                        // nombre: this.props.usuario.nombre,
+                        // apellido: this.props.usuario.apellido,
+                        // fecha: fecha,
+                        // descripcion: this.state.descripcion,
+                        // usuarioId: this.props.usuario._id
+            }),
+            headers: {
+                // token,
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
+        .catch(err => console.log(err));
+    }
+
     render() {
-        let token = localStorage.getItem('token');
+        // let token = localStorage.getItem('token');
         return (
-            <div>
-                <BrowserRouter>
+            <div style={{color:"white", textAlign:"center"}}>
+                <button type="submit" 
+                        onClick={this.buy.bind(this)}>Buy</button>
+                {/* <BrowserRouter>
                     {
                         token ?
                             <div>
@@ -22,7 +48,7 @@ class App extends Component {
                                 <Acceso/>
                             </div>
                     }
-                </BrowserRouter>
+                </BrowserRouter> */}
             </div>
         );
     }

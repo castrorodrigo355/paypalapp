@@ -25,7 +25,7 @@ class SignUp extends Component {
         //console.log(this.state);
         const localhostSignUp = "http://localhost:3000/signup";
         const herokuSignUp = "https://plantillabackend.herokuapp.com/signup";
-        fetch(herokuSignUp, {
+        fetch(localhostSignUp, {
             method: 'POST',
             body: JSON.stringify(this.state),
             headers: {
@@ -56,7 +56,7 @@ class SignUp extends Component {
                     <div className="card-body">
                         <form style={{textAlign:"center"}} onSubmit={this.signup.bind(this)}>
                             <div className="form-group">
-                                <h4><span className="badge badge-pill badge-info">Registrarse</span></h4>
+                                <h4><span className="badge badge-pill badge-info">Ingrese sus datos por favor</span></h4>
                             </div>
                             <div className="form-group">
                                     <input type="email" name="email" className="form-control bg-transparent" placeholder="Email" 
