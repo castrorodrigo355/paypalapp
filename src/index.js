@@ -19,7 +19,6 @@ app.use('/signin', routerSignIn);
 const routerUsuarios = require("./routes/usuarios");
 app.use("/usuarios", authValidator, routerUsuarios);
 // // ----------------------------------------------------------
-const stripe = require('stripe')('sk_test_sk_live_0dh58JZTXXu6335WQ1nm9LZm');
 
 
 app.get("/*", (req, res) => {
